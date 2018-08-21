@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "preinstall": "node ./scripts/preinstall.js && npm run build",
-    "postinstall": "node-gyp rebuild && node ./scripts/postinstall.js",
+    "postinstall": "node-gyp rebuild --target=2.0.7 --dist-url=https://atom.io/download/electron && node ./scripts/postinstall.js",
     "build64": " msbuild .\\InteractiveNotifications.sln /p:Configuration=Release /p:Platform=x64",
     "build86": " msbuild .\\InteractiveNotifications.sln /p:Configuration=Release /p:Platform=x86",
     "build": "npm run build64 && npm run build86"
